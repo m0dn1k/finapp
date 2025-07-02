@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="create_transactions_table" author="Araev_KS">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="Transactions"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="Transactions">
+            <column name="transactions_id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="client_id" type="UUID"/>
+            <column name="objects_id" type="UUID"/>
+            <column name="category_id" type="UUID"/>
+            <column name="date" type="date"/>
+            <column name="amount" type="decimal(19,2)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

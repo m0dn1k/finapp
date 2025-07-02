@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="add-transaction_categories-constraints" author="Araev_KS">
+
+        <sql>CREATE TYPE ENUM_types AS ENUM ('INCOME', 'EXPENSE');</sql>
+
+        <modifyDataType
+                tableName="TransactionCategories"
+                columnName="type"
+                newDataType="ENUM_types"/>
+
+        <addNotNullConstraint tableName="TransactionCategories" columnName="name"/>
+        <addNotNullConstraint tableName="TransactionCategories" columnName="type"/>
+    </changeSet>
+</databaseChangeLog>

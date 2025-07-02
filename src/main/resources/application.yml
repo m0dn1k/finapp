@@ -1,0 +1,11 @@
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://postgres:5432/ddd_project_db
+    username: postgres_user
+    password: P@ssw0rd
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
