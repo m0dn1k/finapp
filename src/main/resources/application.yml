@@ -2,8 +2,8 @@ spring:
   liquibase:
     enabled: true
   datasource:
-    url: jdbc:postgresql://postgres:5432/ddd_project_db
-    username: postgres_user
+    url: jdbc:postgresql://postgres:5432/finapp_project_db
+    username: finapp_user
     password: P@ssw0rd
     driver-class-name: org.postgresql.Driver
   jpa:

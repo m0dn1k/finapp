@@ -1,17 +1,5 @@
 databaseChangeLog:
-  - include:
-      file: db/changelog/changeset/create_tables/01_create_clients_table.xml
-  - include:
-      file: db/changelog/changeset/constraints/02_add_clients_constraints.xml
-  - include:
-      file: db/changelog/changeset/create_tables/03_create_objects_table.xml
-  - include:
-      file: db/changelog/changeset/constraints/04_add_objects_constraints.xml
-  - include:
-      file: db/changelog/changeset/create_tables/05_create_transaction_categories_table.xml
-  - include:
-      file: db/changelog/changeset/constraints/06_add_transaction_categories_constraints.xml
-  - include:
-      file: db/changelog/changeset/create_tables/07_create_transactions_table.xml
-  - include:
-      file: db/changelog/changeset/constraints/08_add_transactions_constraints.xml
+  - includeAll:
+      path: db/changelog/changeset/create_tables/
+  - includeAll:
+      path: db/changelog/changeset/constraints/

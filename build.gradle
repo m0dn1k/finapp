@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.3'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.avast.gradle.docker-compose' version '0.17.12'
 }
 
 group = 'project'
@@ -33,6 +34,15 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dockerCompose {
+    useComposeFiles = ['docker-compose.yml']
+}
+
+tasks.named('bootRun') {
+    dependsOn composeUp
+    finalizedBy composeDown
 }
 
 tasks.named('test') {
