@@ -7,10 +7,10 @@
 
     <changeSet id="add_objects_constraints" author="Araev_KS">
 
-        <addNotNullConstraint tableName="Objects" columnName="address"/>
-        <addForeignKeyConstraint baseTableName="Objects"
+        <addNotNullConstraint tableName="objects" columnName="address"/>
+        <addForeignKeyConstraint baseTableName="objects"
                                  baseColumnNames="client_id"
-                                 referencedTableName="Clients"
+                                 referencedTableName="clients"
                                  referencedColumnNames="client_id"
                                  constraintName="client_id"/>
     </changeSet>

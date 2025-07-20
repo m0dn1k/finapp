@@ -8,11 +8,11 @@
     <changeSet id="create_transactions_table" author="Araev_KS">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="Transactions"/>
+                <tableExists tableName="transactions"/>
             </not>
         </preConditions>
 
-        <createTable tableName="Transactions">
+        <createTable tableName="transactions">
             <column name="transactions_id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
