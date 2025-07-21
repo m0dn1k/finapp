@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="add_transactions_constraints" author="Araev_KS">
+        <addNotNullConstraint tableName="Transactions" columnName="client_id"/>
+        <addNotNullConstraint tableName="Transactions" columnName="category_id"/>
+        <addNotNullConstraint tableName="Transactions" columnName="date"/>
+        <addNotNullConstraint tableName="Transactions" columnName="amount"/>
+
+        <addForeignKeyConstraint
+                baseTableName="Transactions"
+                baseColumnNames="client_id"
+                referencedTableName="Clients"
+                referencedColumnNames="client_id"
+                constraintName="client_id"/>
+
+        <addForeignKeyConstraint
+                baseTableName="Transactions"
+                baseColumnNames="objects_id"
+                referencedTableName="Objects"
+                referencedColumnNames="object_id"
+                constraintName="objects_id"/>
+
+        <addForeignKeyConstraint
+                baseTableName="Transactions"
+                baseColumnNames="category_id"
+                referencedTableName="TransactionCategories"
+                referencedColumnNames="category_id"
+                constraintName="category_id"/>
+    </changeSet>
+</databaseChangeLog>
