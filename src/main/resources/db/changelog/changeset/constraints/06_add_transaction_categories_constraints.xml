@@ -10,11 +10,11 @@
         <sql>CREATE TYPE ENUM_types AS ENUM ('INCOME', 'EXPENSE');</sql>
 
         <modifyDataType
-                tableName="TransactionCategories"
+                tableName="transactionCategories"
                 columnName="type"
                 newDataType="ENUM_types"/>
 
-        <addNotNullConstraint tableName="TransactionCategories" columnName="name"/>
-        <addNotNullConstraint tableName="TransactionCategories" columnName="type"/>
+        <addNotNullConstraint tableName="transactionCategories" columnName="name"/>
+        <addNotNullConstraint tableName="transactionCategories" columnName="type"/>
     </changeSet>
 </databaseChangeLog>
